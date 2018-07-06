@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
       <img src="/assets/images/diamond.png"/>
     </div>
   </section>
+  <section class='section'>
+    <app-events-list></app-events-list>
+  </section>
   `
 })
 export class AppEventsComponent {
