@@ -1,12 +1,12 @@
 <div class='box'>
-    <h1 class='title is-1'>Upcoming Concerts</h1>
+    <h1 class='title is-1'>Historical Concert Data</h1>
     <hr>
     <!-- Assign the app-event-thumbnail component a local variable name to refer to as the parent -->
     <app-event-thumbnail #thumbnail [event]="event1"></app-event-thumbnail>
 
     <!-- This button will be used to trigger debugMessage() in child component -->
     <!-- This works because the app-event-thumbnail was given a local variable above called #thumbnail -->
-    <button class="button" (click)="thumbnail.debugMessage()">Debug Message</button>
+    <button class="button" (click)="thumbnail.debugMessage()">Configure</button>
 
     <!-- Use string interpolation along with the local variable name accessing the public property -->
     <button class="button">{{ thumbnail.debugName }}</button>

@@ -9,7 +9,7 @@ export class EventThumbnailComponent implements OnInit {
   @Input() event: any;
 
   // adding a public property to allow the parent component to reference it
-  debugName: String = 'child-component-alpha';
+  debugName: String = 'Submit';
 
   constructor() { }
 
