@@ -13,5 +13,5 @@ export class EventsListComponent {
         time: '8:45 PM',
         price: 499.99,
         genres: ['electro', 'house', 'dnb', 'techno'],
-    }
+    };
 }
