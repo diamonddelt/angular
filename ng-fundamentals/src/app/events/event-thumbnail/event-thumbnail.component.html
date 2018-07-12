@@ -1,17 +1,24 @@
-<div class='notification is-success'> {{ event.name }} </div>
-    <table class='table is-fullwidth'>
+<div>
+    <table class='table is-fullwidth is-bordered'>
         <thead>
+            <th>Name</th>
             <th>Date</th>
             <th>Time</th>
             <th>Price</th>
-            <th>Genre(s)</th>
+            <th>Symbol</th>
+            <th>Location</th>
+            <th>Online Location</th>
         </thead>
         <tbody>
             <tr>
-                <td> {{ event.date }} </td>
-                <td> {{ event.time }} </td>
-                <td> {{ event.price }} </td>
-                <td> {{ event.genres }} </td>
+                <td> {{ event?.name }} </td>
+                <td> {{ event?.date }} </td>
+                <td> {{ event?.time }} </td>
+                <td> {{ event?.price }} </td>
+                <td> {{ event?.imageUrl }} </td>
+                <td> {{ event?.location?.address }} </td>
+                <td> {{ event?.onlineLocation?.address }} </td>
             </tr>
         </tbody>
     </table>
+</div>
