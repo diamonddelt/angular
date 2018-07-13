@@ -6,8 +6,9 @@
             <th>Time</th>
             <th>Price</th>
             <th>Symbol</th>
-            <th>Location</th>
-            <th>Online Location</th>
+            <th *ngIf="event?.location?.address">Location</th>
+            <th *ngIf="event?.onlineLocation?.address">Online Location</th>
+            <th [hidden]="!event?.sessions?.duration">Duration</th> <!-- Testing adding 'hidden' instead of allowing angular to comment out in DOM -->
         </thead>
         <tbody>
             <tr>
@@ -16,8 +17,9 @@
                 <td> {{ event?.time }} </td>
                 <td> {{ event?.price }} </td>
                 <td> {{ event?.imageUrl }} </td>
-                <td> {{ event?.location?.address }} </td>
-                <td> {{ event?.onlineLocation?.address }} </td>
+                <td *ngIf="event?.location?.address"> {{ event?.location?.address }} </td>
+                <td *ngIf="event?.onlineLocation?.address"> {{ event?.onlineLocation?.address }} </td>
+                <td [hidden]="!event?.sessions?.duration"> {{ event?.sessions?.duration }} </td>
             </tr>
         </tbody>
     </table>
