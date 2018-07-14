@@ -8,14 +8,21 @@
             <th>Symbol</th>
             <th *ngIf="event?.location?.address">Location</th>
             <th *ngIf="event?.onlineLocation?.address">Online Location</th>
-            <th [hidden]="!event?.sessions?.duration">Duration</th> <!-- Testing adding 'hidden' instead of allowing angular to comment out in DOM -->
+            <!-- Testing adding 'hidden' instead of allowing angular to comment out in DOM -->
+            <th [hidden]="!event?.sessions?.duration">Duration</th>
         </thead>
         <tbody>
             <tr>
                 <td> {{ event?.name }} </td>
                 <td> {{ event?.date }} </td>
-                <td> {{ event?.time }} </td>
-                <td> {{ event?.price }} </td>
+                <!-- Testing an example of ngSwitch bound to data which hides elements based on logic -->
+                <td [ngSwitch]="event?.time">
+                     Time: {{ event?.time }}
+                     <span *ngSwitchCase="'9:00 am'">(Normal)</span>
+                     <span *ngSwitchCase="'10:00 am'">(Late)</span>
+                     <span *ngSwitchCase="'8:00 am'">(Early)</span>
+                </td>
+                <td> {{ event?.price }}</td>
                 <td> {{ event?.imageUrl }} </td>
                 <td *ngIf="event?.location?.address"> {{ event?.location?.address }} </td>
                 <td *ngIf="event?.onlineLocation?.address"> {{ event?.onlineLocation?.address }} </td>
