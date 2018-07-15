@@ -16,7 +16,7 @@
                 <td> {{ event?.name }} </td>
                 <td> {{ event?.date }} </td>
                 <!-- Testing an example of ngSwitch bound to data which hides elements based on logic -->
-                <td [ngSwitch]="event?.time">
+                <td [ngClass]="getStartTimeClass()" [ngSwitch]="event?.time">
                      Time: {{ event?.time }}
                      <span *ngSwitchCase="'9:00 am'">(Normal)</span>
                      <span *ngSwitchCase="'10:00 am'">(Late)</span>

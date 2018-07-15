@@ -21,4 +21,9 @@ export class EventThumbnailComponent implements OnInit {
     console.log('This child component of X is logging a message.');
   }
 
+  getStartTimeClass() {
+    if (this.event && this.event.time === '8:00 am')
+      return 'green bold'
+    return ''
+  }
 }
